@@ -10,12 +10,20 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customerId;
-    private String mobileNo;
+    private String mobile;
     private String password;
     @OneToMany(mappedBy = "",cascade = CascadeType.ALL)
     List<TripBooking>tripBookingList=new ArrayList<>();
 
     public Customer() {
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
     public List<TripBooking> getTripBookingList() {
@@ -34,13 +42,6 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public String getMobileNo() {
-        return mobileNo;
-    }
-
-    public void setMobileNo(String mobileNo) {
-        this.mobileNo = mobileNo;
-    }
 
     public String getPassword() {
         return password;
